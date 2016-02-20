@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CrowdBuilderHome</title>
+    <title>{!Campaign.Name}</title>
     <apex:stylesheet value="{!URLFOR($Resource.CB_Assets, '/bootstrap/css/bootstrap.min.css')}" />
     <apex:stylesheet value="{!URLFOR($Resource.CB_Assets, '/css/styles.css')}" />
 </head>
@@ -42,7 +42,7 @@
                         <h3 class="panel-title">Campaign Updates</h3>
                     </div>
                     <div class="panel-body">
-                    	<apex:repeat value="{!CampaignUpdates}" var="update">
+                    	<apex:repeat value="{!ThreeCampaignUpdates}" var="update">
                 			<div class="panel panel-default">
                     			<div class="panel-heading">
                         			<h3 class="panel-title">{!update.Title__c}</h3>
@@ -50,6 +50,9 @@
                     			<div class="panel-body"><apex:outputField value="{!update.Body__c}"/></div>
                 			</div>
 						</apex:repeat>
+                    </div>
+                    <div class="panel-footer">
+                        <apex:outputLink value="{!URLFOR($Page.CB_CampaignUpdates,null,[id=Campaign.Id])}">See all updates</apex:outputLink>
                     </div>
                 </div>
             </div>

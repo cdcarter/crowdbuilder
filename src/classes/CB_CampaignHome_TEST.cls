@@ -23,9 +23,11 @@ public class CB_CampaignHome_TEST {
     	CB_CampaignHome_EXT ext = new CB_CampaignHome_EXT(con);
         
         Test.startTest();
-        List<Campaign_Update__c> updates = ext.getCampaignUpdates();
+        List<Campaign_Update__c> updates = ext.getThreeCampaignUpdates();
+        List<Campaign_Update__c> allUpdates = ext.getCampaignUpdates();
         Test.stopTest();
         
         System.assertEquals(3,updates.size());
+        System.assertEquals(5,allUpdates.size());
     }
 }
