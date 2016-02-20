@@ -2,12 +2,20 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>CrowdBuilder</fullName>
     <types>
-        <members>Campaign</members>
-        <name>CustomObject</name>
+        <members>CrowdBuilder</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Campaign.Captain__c</members>
+        <name>CustomField</name>
     </types>
     <types>
         <members>Campaign-CrowdBuider Campaign Layout</members>
         <name>Layout</name>
+    </types>
+    <types>
+        <members>CrowdBuilder_Admin</members>
+        <name>PermissionSet</name>
     </types>
     <types>
         <members>Campaign.CrowdBuilder_Campaign</members>

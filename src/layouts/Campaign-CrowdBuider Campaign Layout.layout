@@ -23,6 +23,10 @@
                 <behavior>Edit</behavior>
                 <field>EndDate</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Captain__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -153,19 +157,12 @@
     </relatedContent>
     <relatedLists>
         <fields>CAMPAIGN.NAME</fields>
-        <fields>CAMPAIGN.TOTAL_NUM_LEADS</fields>
-        <fields>CAMPAIGN.TOT_CONVERTED_LEADS</fields>
-        <fields>CAMPAIGN.TOT_CONTACTS</fields>
-        <fields>CAMPAIGN.TOT_OPPORTUNITIES</fields>
+        <fields>TOT_EXP_REVENUE</fields>
         <fields>CAMPAIGN.TOT_WON_OPPORTUNITIES</fields>
         <fields>TOT_AMOUNT_WON</fields>
-        <fields>TOT_AMOUNT_ALL</fields>
-        <fields>CAMPAIGN.TOT_NUM_RESPONSES</fields>
-        <fields>TOT_NUM_SENT</fields>
-        <fields>TOT_EXP_REVENUE</fields>
-        <fields>TOT_BUDGETED_COST</fields>
-        <fields>TOT_ACTUAL_COST</fields>
         <relatedList>RelatedCampaignHierarchyList</relatedList>
+        <sortField>CAMPAIGN.NAME</sortField>
+        <sortOrder>Asc</sortOrder>
     </relatedLists>
     <relatedLists>
         <fields>TASK.SUBJECT</fields>
