@@ -3,6 +3,7 @@
     <fullName>CrowdBuilder</fullName>
     <types>
         <members>CB_CampaignHome</members>
+        <members>CB_CampaignUpdate</members>
         <members>CB_DisplayHero_PL</members>
         <name>ApexPage</name>
     </types>
@@ -11,7 +12,7 @@
         <name>CustomApplication</name>
     </types>
     <types>
-        <members>Campaign.Amount_to_Go_For_Hierarchy__c</members>
+        <members>Campaign.Amount_to_Goal_For_Hierarchy__c</members>
         <members>Campaign.Amount_to_Goal__c</members>
         <members>Campaign.Captain__c</members>
         <members>Campaign.Hero_Attachment_Id__c</members>

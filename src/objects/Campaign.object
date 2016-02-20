@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
-        <fullName>Amount_to_Go_For_Hierarchy__c</fullName>
+        <fullName>Amount_to_Goal_For_Hierarchy__c</fullName>
         <externalId>false</externalId>
         <formula>IF((ExpectedRevenue -  HierarchyAmountWonOpportunities ) &gt; 0, ExpectedRevenue - HierarchyAmountWonOpportunities, 0)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <inlineHelpText>The amount remaining for the CrowdBuilder campaign&apos;s goal</inlineHelpText>
-        <label>Amount to Go For Hierarchy</label>
+        <label>Amount to Goal For Hierarchy</label>
         <precision>18</precision>
         <required>false</required>
         <scale>2</scale>
