@@ -2,6 +2,7 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>CrowdBuilder</fullName>
     <types>
+        <members>CB_CampaignHome</members>
         <members>CB_DisplayHero_PL</members>
         <name>ApexPage</name>
     </types>
@@ -42,6 +43,10 @@
         <members>Campaign.CrowdBuilder_Campaign</members>
         <members>Campaign.CrowdBuilder_Master_Campaign</members>
         <name>RecordType</name>
+    </types>
+    <types>
+        <members>CB_Assets</members>
+        <name>StaticResource</name>
     </types>
     <types>
         <members>Campaign.ViewCampaignInfluenceReport</members>

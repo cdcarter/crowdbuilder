@@ -50,6 +50,10 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <pageAccesses>
+        <apexPage>CB_CampaignHome</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>CB_DisplayHero_PL</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
