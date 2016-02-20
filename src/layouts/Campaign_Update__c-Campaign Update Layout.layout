@@ -30,10 +30,6 @@
                 <behavior>Edit</behavior>
                 <field>Date__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Update_Attachment_Id__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>

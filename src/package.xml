@@ -2,10 +2,6 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>CrowdBuilder</fullName>
     <types>
-        <members>CB_HeroAttachment_CTRL</members>
-        <name>ApexClass</name>
-    </types>
-    <types>
         <members>CB_DisplayHero_PL</members>
         <name>ApexPage</name>
     </types>
@@ -23,7 +19,6 @@
         <members>Campaign_Update__c.Date__c</members>
         <members>Campaign_Update__c.Status__c</members>
         <members>Campaign_Update__c.Title__c</members>
-        <members>Campaign_Update__c.Update_Attachment_Id__c</members>
         <name>CustomField</name>
     </types>
     <types>
