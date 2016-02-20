@@ -2,15 +2,37 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>CrowdBuilder</fullName>
     <types>
+        <members>CB_HeroAttachment_CTRL</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>CB_DisplayHero_PL</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
         <members>CrowdBuilder</members>
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>Campaign.Amount_to_Go_For_Hierarchy__c</members>
+        <members>Campaign.Amount_to_Goal__c</members>
         <members>Campaign.Captain__c</members>
+        <members>Campaign.Hero_Attachment_Id__c</members>
+        <members>Campaign_Update__c.Body__c</members>
+        <members>Campaign_Update__c.Campaign__c</members>
+        <members>Campaign_Update__c.Date__c</members>
+        <members>Campaign_Update__c.Status__c</members>
+        <members>Campaign_Update__c.Title__c</members>
+        <members>Campaign_Update__c.Update_Attachment_Id__c</members>
         <name>CustomField</name>
     </types>
     <types>
+        <members>Campaign_Update__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
         <members>Campaign-CrowdBuider Campaign Layout</members>
+        <members>Campaign_Update__c-Campaign Update Layout</members>
         <name>Layout</name>
     </types>
     <types>
@@ -18,7 +40,12 @@
         <name>PermissionSet</name>
     </types>
     <types>
+        <members>Contact.Create_CrowdBuilder_Campaign</members>
+        <name>QuickAction</name>
+    </types>
+    <types>
         <members>Campaign.CrowdBuilder_Campaign</members>
+        <members>Campaign.CrowdBuilder_Master_Campaign</members>
         <name>RecordType</name>
     </types>
     <types>
