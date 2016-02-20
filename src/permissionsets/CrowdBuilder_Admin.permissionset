@@ -4,6 +4,19 @@
         <application>CrowdBuilder</application>
         <visible>false</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>CB_CampaignHome_EXT</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CB_CampaignHome_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign.Additional_Expected_Revenue_in_Hierarchy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>Campaign.Amount_to_Goal_For_Hierarchy__c</field>
@@ -22,6 +35,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Campaign.Hero_Attachment_Id__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign.Percent_to_Goal__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign.Percent_to_Goal_for_Hierarchy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign.Percent_to_Goal_in_Individual_Goals__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

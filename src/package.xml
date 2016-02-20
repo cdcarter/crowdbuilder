@@ -2,6 +2,11 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>CrowdBuilder</fullName>
     <types>
+        <members>CB_CampaignHome_EXT</members>
+        <members>CB_CampaignHome_TEST</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
         <members>CB_CampaignHome</members>
         <members>CB_CampaignUpdate</members>
         <members>CB_DisplayHero_PL</members>
@@ -12,10 +17,14 @@
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>Campaign.Additional_Expected_Revenue_in_Hierarchy__c</members>
         <members>Campaign.Amount_to_Goal_For_Hierarchy__c</members>
         <members>Campaign.Amount_to_Goal__c</members>
         <members>Campaign.Captain__c</members>
         <members>Campaign.Hero_Attachment_Id__c</members>
+        <members>Campaign.Percent_to_Goal__c</members>
+        <members>Campaign.Percent_to_Goal_for_Hierarchy__c</members>
+        <members>Campaign.Percent_to_Goal_in_Individual_Goals__c</members>
         <members>Campaign_Update__c.Body__c</members>
         <members>Campaign_Update__c.Campaign__c</members>
         <members>Campaign_Update__c.Date__c</members>

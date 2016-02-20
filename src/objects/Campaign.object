@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
+        <fullName>Additional_Expected_Revenue_in_Hierarchy__c</fullName>
+        <externalId>false</externalId>
+        <formula>HierarchyExpectedRevenue -  (ExpectedRevenue*2)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Additional Expected Revenue in Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
         <fullName>Amount_to_Goal_For_Hierarchy__c</fullName>
         <externalId>false</externalId>
         <formula>IF((ExpectedRevenue -  HierarchyAmountWonOpportunities ) &gt; 0, ExpectedRevenue - HierarchyAmountWonOpportunities, 0)</formula>
@@ -45,6 +56,40 @@
         <required>false</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Percent_to_Goal__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(AmountWonOpportunities /  ExpectedRevenue &gt; 1,1, AmountWonOpportunities /  ExpectedRevenue)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Displays the percent remaining</inlineHelpText>
+        <label>Percent to Goal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Percent_to_Goal_for_Hierarchy__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( HierarchyAmountWonOpportunities /  ExpectedRevenue &gt; 1, 1, HierarchyAmountWonOpportunities /  ExpectedRevenue)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Percent to Goal for Hierarchy</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Percent_to_Goal_in_Individual_Goals__c</fullName>
+        <externalId>false</externalId>
+        <formula>(HierarchyExpectedRevenue - ExpectedRevenue) / ExpectedRevenue</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Percent to Goal in Individual Goals</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Percent</type>
     </fields>
     <recordTypes>
         <fullName>CrowdBuilder_Campaign</fullName>

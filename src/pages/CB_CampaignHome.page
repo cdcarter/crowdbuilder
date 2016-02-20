@@ -1,4 +1,4 @@
-<apex:page sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0" standardController="Campaign">
+<apex:page sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0" standardController="Campaign" extensions="CB_CampaignHome_EXT">
 <html>
 
 <head>
@@ -32,21 +32,34 @@
         </div>
         <div>
             <div class="progress">
-                <div class="progress-bar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">30%</div>
+                <div class="progress-bar" aria-valuenow="{!Campaign.Percent_to_Goal__c}" aria-valuemin="0" aria-valuemax="100" style="width: {!Campaign.Percent_to_Goal__c}%;"><apex:outputField value="{!Campaign.Percent_to_Goal__c}"/></div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-8">
-                <apex:repeat value="{!Campaign.Campaign_Updates__r}" var="update">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">{!update.Title__c}</h3></div>
-                    <div class="panel-body"><apex:outputField value="{!update.Body__c}"/></div>
+                        <h3 class="panel-title">Campaign Updates</h3>
+                    </div>
+                    <div class="panel-body">
+                    	<apex:repeat value="{!CampaignUpdates}" var="update">
+                			<div class="panel panel-default">
+                    			<div class="panel-heading">
+                        			<h3 class="panel-title">{!update.Title__c}</h3>
+                                </div>
+                    			<div class="panel-body"><apex:outputField value="{!update.Body__c}"/></div>
+                			</div>
+						</apex:repeat>
+                    </div>
                 </div>
-				</apex:repeat>
             </div>
             <div class="col-md-4">
-                <div class="panel panel-default">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">My Goal:&nbsp;<apex:outputField value="{!Campaign.ExpectedRevenue}"/></h3></div>
+                </div>
+
+                <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Gifts </h3></div>
                     <div class="panel-body">
