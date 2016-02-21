@@ -51,6 +51,7 @@
     </types>
     <types>
         <members>CrowdBuilder_Admin</members>
+        <members>CrowdBuilder_Site</members>
         <name>PermissionSet</name>
     </types>
     <types>
