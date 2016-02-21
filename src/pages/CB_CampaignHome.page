@@ -66,11 +66,21 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Gifts </h3></div>
                     <div class="panel-body">
-                        <ul class="list-group">
                             <apex:repeat value="{!Campaign.Opportunities}" var="gift">
-                                <li class="list-group-item">{!gift.Account.Name} -&nbsp;<apex:outputField value="{!gift.Amount}"/></li>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4>
+                                                <apex:outputField value="{!gift.Amount}"/>
+                                            </h4>
+                                        </div>
+                                        <div class="panel-body">
+                                            <b>{!gift.Account.Name}</b> 
+                                            <p>
+                                            {!gift.Description}
+                                            </p>
+                                        </div>
+                                    </div>
                             </apex:repeat>
-                        </ul>
                     </div>
                 </div>
             </div>
