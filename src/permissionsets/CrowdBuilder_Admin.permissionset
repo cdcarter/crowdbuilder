@@ -127,6 +127,10 @@
         <apexPage>CB_Robots</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
+    <pageAccesses>
+        <apexPage>CB_SiteTemplate</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
     <recordTypeVisibilities>
         <recordType>Campaign.CrowdBuilder_Campaign</recordType>
         <visible>false</visible>

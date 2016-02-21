@@ -1,13 +1,8 @@
 <apex:page sidebar="false" showheader="false" applyHtmlTag="false" standardStylesheets="false" docType="html-5.0" standardController="Campaign" extensions="CB_CampaignHome_EXT">
-<html>
-
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{!Campaign.Name}</title>
-    <apex:stylesheet value="{!URLFOR($Resource.CB_Assets, '/bootstrap/css/bootstrap.min.css')}" />
-    <apex:stylesheet value="{!URLFOR($Resource.CB_Assets, '/css/styles.css')}" />
-
+<apex:composition template="{!$Site.Template}">
+<apex:define name="head">
+    <apex:outputField value="{!Campaign.Name}" rendered="false"/>
+    <apex:variable var="pagetitle" value="{!Campaign.Name}"/>
     <!-- facebook open graph tags -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{!$Site.BaseRequestURL}/{!$CurrentPage.Name}?Id={!Campaign.Id}" />
@@ -27,94 +22,88 @@
     <meta name="twitter:description" content="{!Campaign.Parent.Description}" />
     <meta name="twitter:image" content="{!$Site.BaseUrl}/servlet/servlet.FileDownload?file={!Campaign.Parent.Hero_Attachment_Id__c}" />
     <meta name="twitter:url" value="{!$Site.BaseRequestURL}/{!$CurrentPage.Name}?Id={!Campaign.Id}" />
+</apex:define>
 
-</head>
+<apex:define name="brand">
+  <apex:variable var="brand" value="{!Campaign.Parent.Name}"/>
+</apex:define>
 
-<body>
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">{!Campaign.Parent.Name}</a>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="page-header">
-            <h1>{!Campaign.Captain__r.FirstName} {!Campaign.Captain__r.LastName}</h1></div>
-        <div class="jumbotron">
-            <h1>{!Campaign.Parent.Name}</h1>
-            <p><img/>{!Campaign.Description}</p>
-            <p><a class="btn btn-primary " role="button" href="{!Campaign.Donate_Link__c}">Donate</a></p>
-        </div>
-        <div>
-            <div class="progress">
-                <div class="progress-bar" aria-valuenow="{!Campaign.Percent_to_Goal__c}" aria-valuemin="0" aria-valuemax="100" style="width: {!Campaign.Percent_to_Goal__c}%;"><apex:outputField value="{!Campaign.Percent_to_Goal__c}"/></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Campaign Updates</h3>
-                    </div>
-                    <div class="panel-body">
-                    	<apex:repeat value="{!ThreeCampaignUpdates}" var="update">
-                			<div class="panel panel-default">
-                    			<div class="panel-heading">
-                        			<h3 class="panel-title">{!update.Title__c}</h3>
-                                </div>
-                    			<div class="panel-body"><apex:outputField value="{!update.Body__c}"/></div>
-                			</div>
-						</apex:repeat>
-                    </div>
-                    <div class="panel-footer">
-                        <apex:outputLink value="{!URLFOR($Page.CB_CampaignUpdates,null,[id=Campaign.Id])}">See all updates</apex:outputLink>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">My Goal:&nbsp;<apex:outputField value="{!Campaign.ExpectedRevenue}"/></h3></div>
-                </div>
+<apex:define name="body">
+  <div class="page-header">
+    <h1>{!Campaign.Captain__r.FirstName} {!Campaign.Captain__r.LastName}</h1>
+  </div><!-- /page-header-->
 
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Share</h3>
-                  </div>
-                  <div class="panel-body">
-                    <div><a href="https://twitter.com/share" class="twitter-share-button" data-via="{!Campaign.Twitter_Username__c}" data-size="large" data-dnt="true">Tweet</a>
-                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
-                    <a href="#" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u={!$Site.BaseRequestURL}/{!$CurrentPage.Name}?Id={!Campaign.Id}','facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');">Share on Facebook</a>
-                  </div>
-                </div>
+  <div class="jumbotron">
+    <h1>{!Campaign.Parent.Name}</h1>
+    <p><img/>{!Campaign.Description}</p>
+    <p><a class="btn btn-primary " role="button" href="{!Campaign.Donate_Link__c}">Donate</a></p>
+  </div><!-- /jumbotron -->
 
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Gifts </h3></div>
-                    <div class="panel-body">
-                            <apex:repeat value="{!Campaign.Opportunities}" var="gift">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">
-                                            <h4>
-                                                <apex:outputField value="{!gift.Amount}"/>
-                                            </h4>
-                                        </div>
-                                        <div class="panel-body">
-                                            <b>{!gift.Account.Name}</b>
-                                            <p>
-                                            {!gift.Description}
-                                            </p>
-                                        </div>
-                                    </div>
-                            </apex:repeat>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div>
+    <div class="progress">
+      <div class="progress-bar" aria-valuenow="{!Campaign.Percent_to_Goal__c}" aria-valuemin="0" aria-valuemax="100" style="width: {!Campaign.Percent_to_Goal__c}%;"><apex:outputField value="{!Campaign.Percent_to_Goal__c}"/></div>
     </div>
+  </div><!-- /progress -->
 
-    <script src="{!URLFOR($Resource.CB_Assets, '/js/jquery.min.js')}"></script>
-    <script src="{!URLFOR($Resource.CB_Assets, '/bootstrap/js/bootstrap.min.js')}"></script>
-</body>
-</html>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Campaign Updates</h3>
+        </div>
+        <div class="panel-body">
+          <apex:repeat value="{!ThreeCampaignUpdates}" var="update">
+            <div class="panel panel-default">
+        	     <div class="panel-heading">
+                 <h3 class="panel-title">{!update.Title__c}</h3>
+               </div>
+               <div class="panel-body"><apex:outputField value="{!update.Body__c}"/></div>
+             </div>
+				  </apex:repeat>
+        </div>
+        <div class="panel-footer">
+          <apex:outputLink value="{!URLFOR($Page.CB_CampaignUpdates,null,[id=Campaign.Id])}">See all updates</apex:outputLink>
+        </div>
+      </div>
+    </div> <!-- /updates column -->
+
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">My Goal:&nbsp;<apex:outputField value="{!Campaign.ExpectedRevenue}"/></h3></div>
+        </div> <!-- goal panel -->
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Share</h3>
+          </div>
+          <div class="panel-body">
+            <div><a href="https://twitter.com/share" class="twitter-share-button" data-via="{!Campaign.Twitter_Username__c}" data-size="large" data-dnt="true">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
+            <a href="#" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u={!$Site.BaseRequestURL}/{!$CurrentPage.Name}?Id={!Campaign.Id}','facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');">Share on Facebook</a>
+          </div>
+        </div> <!-- /social-panel -->
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Gifts </h3>
+          </div>
+          <div class="panel-body">
+            <apex:repeat value="{!Campaign.Opportunities}" var="gift">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4><apex:outputField value="{!gift.Amount}"/></h4>
+                </div>
+                <div class="panel-body">
+                  <b>{!gift.Account.Name}</b>
+                  <p>{!gift.Description}</p>
+                </div>
+              </div>
+            </apex:repeat>
+          </div>
+        </div><!-- /gifts-panel -->
+      </div><!-- /sidebar -->
+    </div><!-- /row -->
+</apex:define>
+</apex:composition>
 </apex:page>

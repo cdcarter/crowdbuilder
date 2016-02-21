@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>CrowdBuilder</fullName>
+    <apiAccessLevel>Unrestricted</apiAccessLevel>
+    <namespacePrefix>crowdbuilder</namespacePrefix>
     <types>
         <members>CB_CampaignHome_EXT</members>
         <members>CB_CampaignHome_TEST</members>
@@ -12,6 +14,7 @@
         <members>CB_CampaignUpdates</members>
         <members>CB_DisplayHero_PL</members>
         <members>CB_Robots</members>
+        <members>CB_SiteTemplate</members>
         <name>ApexPage</name>
     </types>
     <types>
