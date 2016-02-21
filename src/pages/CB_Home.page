@@ -91,7 +91,7 @@
             <h3 class="panel-title">Gifts </h3>
           </div>
           <div class="panel-body">
-            <apex:repeat value="{!Campaign.Opportunities}" var="gift">
+            <apex:repeat value="{!OpportunitiesInHierarchy}" var="gift">
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h4><apex:outputField value="{!gift.Amount}"/></h4>
