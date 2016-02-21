@@ -4,9 +4,4 @@
     <availableInTouch>false</availableInTouch>
     <confirmationTokenRequired>false</confirmationTokenRequired>
     <label>CB_Robots</label>
-    <packageVersions>
-        <majorNumber>3</majorNumber>
-        <minorNumber>65</minorNumber>
-        <namespace>npsp</namespace>
-    </packageVersions>
 </ApexPage>

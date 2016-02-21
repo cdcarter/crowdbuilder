@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>CrowdBuilder</fullName>
-    <postInstallClass/>
     <types>
         <members>CB_CampaignHome_EXT</members>
         <members>CB_CampaignHome_TEST</members>
@@ -41,7 +40,6 @@
         <name>CustomField</name>
     </types>
     <types>
-        <members>Campaign</members>
         <members>Campaign_Update__c</members>
         <name>CustomObject</name>
     </types>
@@ -73,6 +71,5 @@
         <members>Campaign.ViewCampaignInfluenceReport</members>
         <name>WebLink</name>
     </types>
-    <uninstallClass/>
     <version>35.0</version>
 </Package>
