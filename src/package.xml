@@ -67,9 +67,5 @@
         <members>CB_Assets</members>
         <name>StaticResource</name>
     </types>
-    <types>
-        <members>Campaign.ViewCampaignInfluenceReport</members>
-        <name>WebLink</name>
-    </types>
     <version>35.0</version>
 </Package>
