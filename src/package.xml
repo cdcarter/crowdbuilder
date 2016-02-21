@@ -10,7 +10,6 @@
     </types>
     <types>
         <members>CB_CampaignHome</members>
-        <members>CB_CampaignUpdate</members>
         <members>CB_CampaignUpdates</members>
         <members>CB_DisplayHero_PL</members>
         <members>CB_Robots</members>

@@ -112,10 +112,6 @@
         <enabled>false</enabled>
     </pageAccesses>
     <pageAccesses>
-        <apexPage>CB_CampaignUpdate</apexPage>
-        <enabled>false</enabled>
-    </pageAccesses>
-    <pageAccesses>
         <apexPage>CB_CampaignUpdates</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
