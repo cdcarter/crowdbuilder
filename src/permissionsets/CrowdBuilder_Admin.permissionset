@@ -44,6 +44,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Campaign.Hero_Image_Height__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign.Hero_Image_Type__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Campaign.Hero_Image_Width__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Campaign.Percent_to_Goal__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -55,6 +70,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Campaign.Percent_to_Goal_in_Individual_Goals__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Campaign.Twitter_Username__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -96,6 +116,10 @@
     </pageAccesses>
     <pageAccesses>
         <apexPage>CB_DisplayHero_PL</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CB_Robots</apexPage>
         <enabled>false</enabled>
     </pageAccesses>
     <recordTypeVisibilities>

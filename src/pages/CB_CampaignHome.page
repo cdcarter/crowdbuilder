@@ -1,4 +1,4 @@
-<apex:page sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0" standardController="Campaign" extensions="CB_CampaignHome_EXT">
+<apex:page sidebar="false" showheader="false" applyHtmlTag="false" standardStylesheets="false" docType="html-5.0" standardController="Campaign" extensions="CB_CampaignHome_EXT">
 <html>
 
 <head>
@@ -7,6 +7,27 @@
     <title>{!Campaign.Name}</title>
     <apex:stylesheet value="{!URLFOR($Resource.CB_Assets, '/bootstrap/css/bootstrap.min.css')}" />
     <apex:stylesheet value="{!URLFOR($Resource.CB_Assets, '/css/styles.css')}" />
+
+    <!-- facebook open graph tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{!$Site.BaseRequestURL}/{!$CurrentPage.Name}?Id={!Campaign.Id}" />
+    <meta property="og:title" content="{!Campaign.Parent.Name}" />
+    <meta property="og:description" content="{!Campaign.Parent.Description}" />
+    <meta property="og:site_name" content="{!$Organization.Name}"/>
+    <meta property="og:image" content="{!$Site.BaseUrl}/servlet/servlet.FileDownload?file={!Campaign.Parent.Hero_Attachment_Id__c}" />
+    <meta property="og:image:width" content="{!Campaign.Parent.Hero_Image_Width__c}"/>
+    <meta property="og:image:height" content="{!Campaign.Parent.Hero_Image_Height__c}"/>
+    <meta property="og:image:type" content="{!Campaign.Parent.Hero_Image_Type__c}"/>
+    <!-- twitter card tags additive with the og: tags -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <!---<meta name="twitter:domain" content="{!$Site.BaseRequestURL}" />-->
+    <meta name="twitter:site" content="@{!Campaign.Parent.Twitter_Username__c}"/>
+    <meta name="twitter:creator" content="@{!Campaign.Twitter_Username__c}"/>
+    <meta name="twitter:title" content="{!Campaign.Parent.Name}" />
+    <meta name="twitter:description" content="{!Campaign.Parent.Description}" />
+    <meta name="twitter:image" content="{!$Site.BaseUrl}/servlet/servlet.FileDownload?file={!Campaign.Parent.Hero_Attachment_Id__c}" />
+    <meta name="twitter:url" value="{!$Site.BaseRequestURL}/{!$CurrentPage.Name}?Id={!Campaign.Id}" />
+
 </head>
 
 <body>
@@ -74,7 +95,7 @@
                                             </h4>
                                         </div>
                                         <div class="panel-body">
-                                            <b>{!gift.Account.Name}</b> 
+                                            <b>{!gift.Account.Name}</b>
                                             <p>
                                             {!gift.Description}
                                             </p>

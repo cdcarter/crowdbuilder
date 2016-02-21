@@ -65,6 +65,35 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Hero_Image_Height__c</fullName>
+        <externalId>false</externalId>
+        <label>Hero Image Height</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hero_Image_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Hero Image Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hero_Image_Width__c</fullName>
+        <externalId>false</externalId>
+        <label>Hero Image Width</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Percent_to_Goal__c</fullName>
         <externalId>false</externalId>
         <formula>IF(AmountWonOpportunities /  ExpectedRevenue &gt; 1,1, AmountWonOpportunities /  ExpectedRevenue)</formula>
@@ -97,6 +126,15 @@
         <required>false</required>
         <scale>2</scale>
         <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Twitter_Username__c</fullName>
+        <externalId>false</externalId>
+        <label>Twitter Username</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <recordTypes>
         <fullName>CrowdBuilder_Campaign</fullName>

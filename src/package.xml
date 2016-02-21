@@ -11,6 +11,7 @@
         <members>CB_CampaignUpdate</members>
         <members>CB_CampaignUpdates</members>
         <members>CB_DisplayHero_PL</members>
+        <members>CB_Robots</members>
         <name>ApexPage</name>
     </types>
     <types>
@@ -24,9 +25,13 @@
         <members>Campaign.Captain__c</members>
         <members>Campaign.Donate_Link__c</members>
         <members>Campaign.Hero_Attachment_Id__c</members>
+        <members>Campaign.Hero_Image_Height__c</members>
+        <members>Campaign.Hero_Image_Type__c</members>
+        <members>Campaign.Hero_Image_Width__c</members>
         <members>Campaign.Percent_to_Goal__c</members>
         <members>Campaign.Percent_to_Goal_for_Hierarchy__c</members>
         <members>Campaign.Percent_to_Goal_in_Individual_Goals__c</members>
+        <members>Campaign.Twitter_Username__c</members>
         <members>Campaign_Update__c.Body__c</members>
         <members>Campaign_Update__c.Campaign__c</members>
         <members>Campaign_Update__c.Date__c</members>
@@ -40,6 +45,7 @@
     </types>
     <types>
         <members>Campaign-CrowdBuider Campaign Layout</members>
+        <members>Campaign-CrowdBuider Master Campaign Layout</members>
         <members>Campaign_Update__c-Campaign Update Layout</members>
         <name>Layout</name>
     </types>
