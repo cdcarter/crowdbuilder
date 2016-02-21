@@ -8,10 +8,6 @@
         <field>Name</field>
         <formula>Contact.FirstName &amp; &quot; &quot; &amp; Contact.LastName &amp; &quot; - &quot; &amp; &quot;CrowdBuilder&quot;</formula>
     </fieldOverrides>
-    <fieldOverrides>
-        <field>Type</field>
-        <literalValue>Crowdfunding</literalValue>
-    </fieldOverrides>
     <label>Create CrowdBuilder Campaign</label>
     <quickActionLayout>
         <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>

@@ -174,10 +174,6 @@
                 <default>true</default>
             </values>
             <values>
-                <fullName>Crowdfunding</fullName>
-                <default>false</default>
-            </values>
-            <values>
                 <fullName>Direct Mail</fullName>
                 <default>false</default>
             </values>
@@ -251,10 +247,6 @@
             <values>
                 <fullName>Conference</fullName>
                 <default>true</default>
-            </values>
-            <values>
-                <fullName>Crowdfunding</fullName>
-                <default>false</default>
             </values>
             <values>
                 <fullName>Direct Mail</fullName>
