@@ -1,49 +1,56 @@
-<apex:page sidebar="false" showheader="false" standardStylesheets="false" docType="html-5.0" standardController="Campaign" extensions="CB_CampaignHome_EXT">
-<html>
+<apex:page sidebar="false" showheader="false" applyHtmlTag="false" standardStylesheets="false" docType="html-5.0" standardController="Campaign" extensions="CB_CampaignHome_EXT">
+<apex:composition template="{!$Site.Template}">
+<apex:define name="head">
+    <apex:outputField value="{!Campaign.Name}" rendered="false"/>
+    <apex:variable var="pagetitle" value="{!Campaign.Name}"/>
+    <!-- facebook open graph tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{!$Site.BaseRequestURL}/{!$CurrentPage.Name}?Id={!Campaign.Id}" />
+    <meta property="og:title" content="{!Campaign.Parent.Name}" />
+    <meta property="og:description" content="{!Campaign.Parent.Description}" />
+    <meta property="og:site_name" content="{!$Organization.Name}"/>
+    <meta property="og:image" content="{!$Site.BaseUrl}/servlet/servlet.FileDownload?file={!Campaign.Parent.Hero_Attachment_Id__c}" />
+    <meta property="og:image:width" content="{!Campaign.Parent.Hero_Image_Width__c}"/>
+    <meta property="og:image:height" content="{!Campaign.Parent.Hero_Image_Height__c}"/>
+    <meta property="og:image:type" content="{!Campaign.Parent.Hero_Image_Type__c}"/>
+    <!-- twitter card tags additive with the og: tags -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <!---<meta name="twitter:domain" content="{!$Site.BaseRequestURL}" />-->
+    <meta name="twitter:site" content="@{!Campaign.Parent.Twitter_Username__c}"/>
+    <meta name="twitter:creator" content="@{!Campaign.Twitter_Username__c}"/>
+    <meta name="twitter:title" content="{!Campaign.Parent.Name}" />
+    <meta name="twitter:description" content="{!Campaign.Parent.Description}" />
+    <meta name="twitter:image" content="{!$Site.BaseUrl}/servlet/servlet.FileDownload?file={!Campaign.Parent.Hero_Attachment_Id__c}" />
+    <meta name="twitter:url" value="{!$Site.BaseRequestURL}/{!$CurrentPage.Name}?Id={!Campaign.Id}" />
+</apex:define>
 
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{!Campaign.Name}</title>
-    <apex:stylesheet value="{!URLFOR($Resource.CB_Assets, '/bootstrap/css/bootstrap.min.css')}" />
-    <apex:stylesheet value="{!URLFOR($Resource.CB_Assets, '/css/styles.css')}" />
-</head>
+<apex:define name="brand">
+  <apex:variable var="brand" value="{!Campaign.Parent.Name}"/>
+</apex:define>
 
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#">{!Campaign.Parent.Name}</a>
-                <ul class="nav navbar-nav">
 
-                    <li role="presentation"><a href="CB_CampaignUpdate?id={!Campaign.Id}">Update your Campaign</a></li>
-				</ul>
-                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            </div>
-            <div class="collapse navbar-collapse" id="navcol-1"></div>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="page-header">
-            <h1><apex:outputLink value="{!URLFOR($Page.CB_CampaignHome,null,[id=Campaign.Id])}">{!Campaign.Captain__r.FirstName} {!Campaign.Captain__r.LastName}</apex:outputLink></h1>
-        </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3>
-                    All Campaign Updates
-                </h3>
-            </div>
-            <div class="panel-body">
-                <apex:repeat value="{!CampaignUpdates}" var="update">
-                	<div class="panel panel-default">
-                    	<div class="panel-heading">
-                        	<h3 class="panel-title">{!update.Title__c}</h3>
-                        </div>
-                    	<div class="panel-body"><apex:outputField value="{!update.Body__c}"/></div>
-                	</div>
-                </apex:repeat>
-            </div>
-        </div>
+<apex:define name="body">
+  <div class="page-header">
+    <h1><apex:outputLink value="{!URLFOR($Page.CB_CampaignHome,null,[id=Campaign.Id])}">{!Campaign.Captain__r.FirstName} {!Campaign.Captain__r.LastName}</apex:outputLink></h1>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3>All Campaign Updates</h3>
     </div>
-</body>
-</html>
+    <div class="panel-body">
+      <apex:repeat value="{!CampaignUpdates}" var="update">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">{!update.Title__c}</h3>
+          </div>
+          <div class="panel-body">
+            <apex:outputField value="{!update.Body__c}"/>
+          </div>
+        </div>
+      </apex:repeat>
+    </div>
+  </div>
+</apex:define>
+</apex:composition>
 </apex:page>
