@@ -48,6 +48,13 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Donate_Link__c</fullName>
+        <externalId>false</externalId>
+        <label>Donate Link</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
         <fullName>Hero_Attachment_Id__c</fullName>
         <externalId>false</externalId>
         <inlineHelpText>The Salesforce ID of the hero image for this campaign.</inlineHelpText>

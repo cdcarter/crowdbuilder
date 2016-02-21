@@ -22,6 +22,7 @@
         <members>Campaign.Amount_to_Goal_For_Hierarchy__c</members>
         <members>Campaign.Amount_to_Goal__c</members>
         <members>Campaign.Captain__c</members>
+        <members>Campaign.Donate_Link__c</members>
         <members>Campaign.Hero_Attachment_Id__c</members>
         <members>Campaign.Percent_to_Goal__c</members>
         <members>Campaign.Percent_to_Goal_for_Hierarchy__c</members>
