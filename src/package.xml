@@ -10,6 +10,7 @@
         <members>CB_CampaignHome</members>
         <members>CB_CampaignUpdates</members>
         <members>CB_DisplayHero_PL</members>
+        <members>CB_Home</members>
         <members>CB_Robots</members>
         <members>CB_SiteTemplate</members>
         <name>ApexPage</name>

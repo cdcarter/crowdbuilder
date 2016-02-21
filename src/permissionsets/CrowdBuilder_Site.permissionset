@@ -120,6 +120,10 @@
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>CB_Home</apexPage>
+        <enabled>false</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>CB_Robots</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
